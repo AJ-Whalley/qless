@@ -57,6 +57,11 @@
      - Future development / project improvements
 
 
+### Gems 
+ - Rspec-rails 
+ - 
+
+
 # Posibilities inspired from other README's 
 ```
 my-app/
