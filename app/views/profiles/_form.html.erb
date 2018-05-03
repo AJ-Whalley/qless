@@ -4,7 +4,6 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.association :user %>
     <%= f.input :image_data %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
@@ -14,7 +13,7 @@
     <%= f.input :city %>
     <%= f.input :postal_code %>
     <%= f.input :state %>
-    <%= f.input :country_code %>
+    <%# <%= f.input :country_code %>
     <%= f.input :identification %>
   </div>
 
