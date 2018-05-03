@@ -14,7 +14,7 @@ gem 'image_processing', '~> 1.2'
 gem 'stripe', '~> 3.13'
 gem 'simple_form'
 gem 'rubocop', '~> 0.55.0', require: false
-
+gem 'country_select', '~> 3.1', '>= 3.1.1'
 
 
 
