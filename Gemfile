@@ -12,6 +12,10 @@ gem 'mailgun_rails'
 gem "shrine", "~> 2.0"
 gem 'image_processing', '~> 1.2'
 gem 'stripe', '~> 3.13'
+gem 'simple_form'
+
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
