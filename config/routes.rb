@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :jobs
   resources :profiles
   root 'pages#index'
 
@@ -14,6 +15,7 @@ end
 
 
 # Rails.application.routes.draw do
+  resources :jobs
 #   devise_for :users, controllers: {
 #     sessions: 'users/sessions'
 #   }
