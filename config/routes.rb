@@ -14,9 +14,3 @@ Rails.application.routes.draw do
 end
 
 
-# Rails.application.routes.draw do
-  resources :jobs
-#   devise_for :users, controllers: {
-#     sessions: 'users/sessions'
-#   }
-# end

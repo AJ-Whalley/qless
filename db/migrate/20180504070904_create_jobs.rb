@@ -7,8 +7,8 @@ class CreateJobs < ActiveRecord::Migration[5.1]
       t.decimal :latitude
       t.decimal :longitude
       t.string :title
-      t.timestampz :started_at
-      t.timestampz :completed_at
+      t.timestamp :started_at
+      t.timestamp :completed_at
       t.decimal :price
       t.text :instructions
       t.uuid :uuid
