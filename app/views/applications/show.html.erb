@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @application.user %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @application.job %>
+</p>
+
+<p>
+  <strong>Approved at:</strong>
+  <%= @application.approved_at %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @application.approved %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @application.comment %>
+</p>
+
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>
