@@ -1,27 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @profile.user %>
+  <%= image_tag @profile.image_url(:small) %>
 </p>
 
 <p>
-  <strong>Image data:</strong>
-  <%= @profile.image_data %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @profile.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
+  <strong>Name:</strong>
+  <%= @profile.first_name %> 
   <%= @profile.last_name %>
 </p>
 
 <p>
-  <strong>Dob:</strong>
+  <strong>Date of Birth:</strong>
   <%= @profile.dob %>
 </p>
 
