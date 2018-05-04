@@ -1,4 +1,6 @@
-<h1>Pages#user_home</h1>
+<%= link_to 'Book Qer', new_job_path %>
+<%= link_to 'See Bookings', job_path(current_user) %>
+<h1>Welcome home <%= current_user.profile.first_name %></h1>
 <p>Find me in app/views/pages/user_home.html.erb</p>
 
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %>

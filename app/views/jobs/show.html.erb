@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @job.user %>
-</p>
 
 <p>
   <strong>Street address:</strong>
@@ -16,17 +12,7 @@
 </p>
 
 <p>
-  <strong>Latitude:</strong>
-  <%= @job.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @job.longitude %>
-</p>
-
-<p>
-  <strong>Title:</strong>
+  <strong>Job Q-ing Title:</strong>
   <%= @job.title %>
 </p>
 
@@ -36,13 +22,8 @@
 </p>
 
 <p>
-  <strong>Completed at:</strong>
-  <%= @job.completed_at %>
-</p>
-
-<p>
   <strong>Price:</strong>
-  <%= @job.price %>
+  $<%= @job.price %>
 </p>
 
 <p>
@@ -50,20 +31,5 @@
   <%= @job.instructions %>
 </p>
 
-<p>
-  <strong>Uuid:</strong>
-  <%= @job.uuid %>
-</p>
-
-<p>
-  <strong>Qrcode data:</strong>
-  <%= @job.qrcode_data %>
-</p>
-
-<p>
-  <strong>Stripe charge:</strong>
-  <%= @job.stripe_charge_id %>
-</p>
-
 <%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Back', pages_user_home_path %>
