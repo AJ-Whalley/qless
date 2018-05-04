@@ -1,35 +1,49 @@
 <p id="notice"><%= notice %></p>
 
+<div class="jobs">
+  <% @job.each do |j| %>
 
-<p>
-  <strong>Street address:</strong>
-  <%= @job.street_address %>
-</p>
+<% if j.user_id == current_user.id %>
+  <p>
+    <strong>User Id:</strong>
+    <%= j.user_id %>
+  </p>
+  <p>
+    <strong>Street address:</strong>
+    <%= j.street_address %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @job.city %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= j.city %>
+  </p>
 
-<p>
-  <strong>Job Q-ing Title:</strong>
-  <%= @job.title %>
-</p>
+  <p>
+    <strong>Job Q-ing Title:</strong>
+    <%= j.title %>
+  </p>
 
-<p>
-  <strong>Started at:</strong>
-  <%= @job.started_at %>
-</p>
+  <p>
+    <strong>Started at:</strong>
+    <%= j.started_at %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  $<%= @job.price %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    $<%= j.price %>
+  </p>
 
-<p>
-  <strong>Instructions:</strong>
-  <%= @job.instructions %>
-</p>
+  <p>
+    <strong>Instructions:</strong>
+    <%= j.instructions %>
+  </p>
+  
+
+<% else %>
+  <%= puts "SUP" %>
+<% end %>
+    <% end %>
+</div>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', pages_user_home_path %>
