@@ -71,4 +71,5 @@ class ApplicationsController < ApplicationController
     def application_params
       params.require(:application).permit(:user_id, :job_id, :approved_at, :approved, :comment)
     end
+ 
 end

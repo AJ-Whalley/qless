@@ -4,11 +4,12 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.association :user %>
+    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id }%>
     <%= f.association :job %>
-    <%= f.input :approved_at %>
-    <%= f.input :approved %>
-    <%= f.input :comment %>
+    <%= f.input :approved_at, required: false %>
+    <%= f.input :approved, required: false %>
+    <%= f.input :comment, required: false %>
+    
   </div>
 
   <div class="form-actions">
