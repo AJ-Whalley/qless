@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  
+
   def index
   end
 
@@ -7,9 +7,12 @@ class PagesController < ApplicationController
   end
 
   def support
+    
   end
 
   def user_home
     @jobs = Job.all
+    
   end
+
 end

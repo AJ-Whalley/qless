@@ -1,7 +1,10 @@
 <%= link_to 'Book Qer', new_job_path %> |
+<%= link_to 'Be A Qer' %> |
+<%= link_to 'Support', pages_support_path %> |
 <%= link_to 'See Bookings', jobs_path(current_user) %> |
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %> |
 <%= link_to 'View Profile', profile_path(current_user) %>
+
 <h1>Welcome home <%= current_user.profile.first_name %></h1>
 
 <h2>A map with current available jobs goes here</h2>
