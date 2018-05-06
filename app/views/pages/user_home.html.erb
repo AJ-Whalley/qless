@@ -1,5 +1,5 @@
 <%= link_to 'Book Qer', new_job_path %> |
-<%= link_to 'See Bookings', job_path(current_user) %> |
+<%= link_to 'See Bookings', jobs_path(current_user) %> |
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %> |
 <%= link_to 'View Profile', profile_path(current_user) %>
 <h1>Welcome home <%= current_user.profile.first_name %></h1>
@@ -51,10 +51,46 @@
     </script>
 
 
+<br><br><br><br>
+<div>
+    <%= @jobs.count %> <br>
+    <% @jobs.each do |job| %> <br>
+        <div>
+        <%= image_tag job.user.profile.image_url(:job_card) %> <br>
+        <%= job.user.profile.first_name %>
+        <%= job.user.profile.last_name %>
+        </div><br>
 
+        <div>
+        <%= job.title %> <br>
+        <ul>
+            <li><%= job.street_address %></li>
+            <li><%= job.city %></li>
+            <li><%= job.started_at %></li>
+            <li>$<%= job.price %></li>
+            <li><%= job.instructions %></li>
+        </ul>
+        <%= link_to 'See Job', job_path(job.id) %>
+        </div>
+    <% end %>
+</div>
 
-
-
+<%# t.bigint "user_id"
+    t.text "street_address"
+    t.string "city"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.string "title"
+    t.datetime "started_at"
+    t.datetime "completed_at"
+    t.decimal "price"
+    t.text "instructions"
+    t.uuid "uuid"
+    t.text "qrcode_data"
+    t.text "stripe_charge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_jobs_on_user_id" %>
 
 
 

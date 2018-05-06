@@ -1,61 +1,50 @@
-<h1>Your Current Time Savers</h1>
-<div class="jobs">
-  <% @job.each do |j| %>
-
-<% if j.user_id == current_user.id %>
-  <p>
-    <strong>User Id:</strong>
-    <%= j.user_id %>
+<h1>The One Job </h1>
+<div class="job">
+    <strong>For:</strong><br>
+    <%= image_tag @job.user.profile.image_url(:job_card) %> <br>
+    <%= @job.user.profile.first_name %>
+    <%= @job.user.profile.last_name %>
   </p>
   <p>
     <strong>Street address:</strong>
-    <%= j.street_address %>
+    <%= @job.street_address %>
   </p>
 
   <p>
     <strong>City:</strong>
-    <%= j.city %>
+    <%= @job.city %>
   </p>
 
   <p>
     <strong>Job Q-ing Title:</strong>
-    <%= j.title %>
+    <%= @job.title %>
   </p>
 
   <p>
     <strong>Started at:</strong>
-    <%= j.started_at %>
+    <%= @job.started_at %>
   </p>
 
   <p>
     <strong>Price:</strong>
-    $<%= j.price %>
+    $<%= @job.price %>
   </p>
 
   <p>
     <strong>Instructions:</strong>
-    <%= j.instructions %>
+    <%= @job.instructions %>
   </p>
 
   <p>
   <strong>Latitude:</strong>
-  <%= j.latitude %>
-</p>
+  <%= @job.latitude %>
+  </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= j.longitude %>
-</p>
-  
-  <%= link_to 'Edit', edit_job_path(j) %>
+  <p>
+    <strong>Longitude:</strong>
+    <%= @job.longitude %>
+  </p>
 
-<% else %>
-  <%= puts "SUP" %>
-<% end %>
-    <% end %>
 </div>
-
- |
-<%= link_to 'Back', pages_user_home_path %> | 
-<%= link_to 'Create New Job', new_job_path %>
+<%= link_to 'Back', pages_user_home_path %> 
 
