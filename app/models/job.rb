@@ -14,4 +14,4 @@ def full_address
   "#{street_address}, #{city}"
 end 
 
-end
+end 

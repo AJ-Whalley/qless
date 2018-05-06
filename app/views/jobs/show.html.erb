@@ -36,7 +36,18 @@
     <strong>Instructions:</strong>
     <%= j.instructions %>
   </p>
+
+  <p>
+  <strong>Latitude:</strong>
+  <%= j.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= j.longitude %>
+</p>
   
+  <%= link_to 'Edit', edit_job_path(j) %>
 
 <% else %>
   <%= puts "SUP" %>
@@ -44,7 +55,7 @@
     <% end %>
 </div>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
+ |
 <%= link_to 'Back', pages_user_home_path %> | 
 <%= link_to 'Create New Job', new_job_path %>
 
