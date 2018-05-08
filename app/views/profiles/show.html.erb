@@ -48,5 +48,19 @@
   <%= @profile.identification %>
 </p>
 
+<p>
+  <strong>User Id:</strong>
+  <%= @profile.id %>
+</p>
+
+<p>
+  <strong>Jobs Applied For:</strong>
+  <% @profile.user.job_applications.each do |a| %>
+  <%= a[:title] %>
+  <% end %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', pages_user_home_path %>

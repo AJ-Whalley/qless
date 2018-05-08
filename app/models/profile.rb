@@ -5,6 +5,7 @@ class Profile < ApplicationRecord
   belongs_to :user
 
   validates(
+    :image,
     :first_name,
     :last_name,
     :street_address,

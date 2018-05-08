@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @jobs = current_user.jobs
   end
 
   # GET /profiles/new

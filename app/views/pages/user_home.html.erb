@@ -1,5 +1,5 @@
 <%= link_to 'Book Qer', new_job_path %> |
-<%= link_to 'Be A Qer', applications_path %> |
+<%= link_to 'Be A Qer', jobs_qer_path %> |
 <%= link_to 'Support', pages_support_path %> |
 <%= link_to 'See Bookings', jobs_path(current_user) %> |
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %> |
@@ -27,32 +27,31 @@
 
     <h3>My Google Maps Demo</h3>
     <div id="map"></div>
-    <script>
-        var lat = <%= current_user.profile.latitude %>
-        var lng = <%= current_user.profile.longitude %>
+    <%= javascript_tag do %>
       function initMap() {
-        var school = {lat: lat , lng: lng };
-        var grr = {lat: -37.8124171 , lng: 144.9732789 };
-        var map = new google.maps.Map(document.getElementById('map'), {
+        const locations = <%= raw @locations.to_json %>
+        locations.forEach((local) => {
+          local.lng = parseFloat(local.lng)
+          local.lat = parseFloat(local.lat)
+          })
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -37.8182119, lng:144.9543325},
           zoom: 15,
-          center: school
         });
-        
-        var marker = new google.maps.Marker({
-          position: school,
-          map: map
-        });
-
-        var marker2 = new google.maps.Marker({
-          position: grr,
-          map: map
-        });
-      }
-    </script>
+    // markers for each location
+    locations.map((location, i) => {
+      return new google.maps.Marker({
+        position: location,
+        label: location.name,
+        map: map
+      });
+      });
+    }
+    <% end %>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["YOUR_API_KEY"] %>&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["MAP_KEY"] %>&callback=initMap">
     </script>
-
 
 <br><br><br><br>
 <div>
@@ -77,101 +76,3 @@
         </div>
     <% end %>
 </div>
-
-<%# t.bigint "user_id"
-    t.text "street_address"
-    t.string "city"
-    t.decimal "latitude"
-    t.decimal "longitude"
-    t.string "title"
-    t.datetime "started_at"
-    t.datetime "completed_at"
-    t.decimal "price"
-    t.text "instructions"
-    t.uuid "uuid"
-    t.text "qrcode_data"
-    t.text "stripe_charge_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_jobs_on_user_id" %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <%# <style>
-       #map {
-        height: 400px;
-        width: 500px;
-       }
-    </style>
-    <div id="map"></div>
-    <script>
-      function initMap() {
-        var home = {lat: -0.378106441e2, lng: 0.14496871e3};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
-          center: home
-        });
-        var marker = new google.maps.Marker({
-          position: home,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7K76IDfI4l7GFCY6SexQtGYEZcdmEkOk&callback=initMap">
-    </script> %>
-
-
-
-
-<%# <div id="googleMap" style="width:100%;height:400px;"></div>
-
-<script>
-function myMap() {
-  
-var mapProp= {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-};
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-
-var marker = new google.maps.Marker({position: myCenter});
-
-marker.setMap(map);
-
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7K76IDfI4l7GFCY6SexQtGYEZcdmEkOk&callback=myMap"></script> %>
