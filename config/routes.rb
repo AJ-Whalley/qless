@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'charges/new'
-
-  get 'charges/create'
-
   get 'jobs/qer'
 
   resources :jobs do 
     member do 
       post 'apply'
       post 'application_update'
-       # /job/:id/charge
-       post 'charge'
+      post 'charge'
 
     end
   end

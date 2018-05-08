@@ -1,10 +1,10 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:apply, :show, :edit, :update, :destroy]
-
+  before_action :set_job, only: [:charge, :apply, :show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:charge]
   # GET /jobs
   # GET /jobs.json
-  def index
-    @jobs = Job.all
+  def index  
+    @jobs = Job.all  
   end
 
   # GET /jobs/1
@@ -16,6 +16,31 @@ class JobsController < ApplicationController
   # GET /jobs/new
   def new
     @job = Job.new
+  end
+
+  def charge
+    
+    amount = @job.price.to_i
+    
+    customer = Stripe::Customer.create(
+      email: params[:stripeEmail],
+      source: params[:stripeToken]
+    )
+
+    charge = Stripe::Charge.create(
+      customer: customer.id,
+      amount: amount,
+      description: @job.title,
+      currency: 'AUD'
+    )
+    flash[:notice] = "Payment made!"
+
+    redirect_to pages_user_home_path
+  
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_back fallback_location: pages_user_home_path
+
   end
 
   # GET /jobs/1/edit
@@ -35,6 +60,7 @@ class JobsController < ApplicationController
     end
   end
 
+  # POST /jobs/1/application_update
   def application_update
     current_application_number = params[:application_number]
     current_application_job_id = params[:application_job_id]
