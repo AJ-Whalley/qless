@@ -46,15 +46,34 @@
   <strong>Longitude:</strong>
   <%= j.longitude %>
 </p>
-  
-  <%= link_to 'Edit', edit_job_path(j) %>
 
+<% if j.applications.where(approved: true).exists?%>
+  <% approved_application = j.applications.where(approved: true)[0] %>   
+    <%= image_tag approved_application.user.profile.image_url(:job_card)%><br>
+  <p><%= approved_application.user.profile.first_name %>
+  <%= approved_application.user.profile.last_name %> has been approved for the job</p>
+  <%= link_to 'See Profile', profile_path(approved_application.user) %>  
 <% else %>
-  <%= puts "SUP" %>
+<p>
+  <strong>Applicants:</strong><br>
+  <% j.applications.each do |application| %>
+  <%= image_tag application.user.profile.image_url(:job_card)%><br>
+  <%= application.user.profile.first_name %>
+  <%= application.user.profile.last_name %>
+  <%= link_to 'See Profile', profile_path(application.user) %>
+  <%= button_to 'Confirm', application_update_job_path(application.job_id), method: :post, params: {application_number: application, application_job_id: application.job_id } %>
+  <% end %>
+  <% end %>
+</p>
+  <%= link_to 'Edit', edit_job_path(j) %>
 <% end %>
-    <% end %>
+<% end %>
 </div>
 
  |
 <%= link_to 'Back', pages_user_home_path %> | 
 <%= link_to 'Create New Job', new_job_path %>
+
+
+<%# = button_to "smth", some_path, method: :get, params: { start_point: 3.month.ago }
+the key is to use params key, then in controller you will be able to get value via @some_var = params[:start_point] %>

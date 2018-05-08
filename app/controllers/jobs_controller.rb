@@ -24,8 +24,27 @@ class JobsController < ApplicationController
 
   # POST /jobs/1/apply
   def apply
+    @application_count = Application.count
     @job.applicants << current_user
+    if Application.count != @application_count
+      flash[:notice] = "Job application successful!"
+      redirect_to jobs_qer_path
+    else
+      redirect_to jobs_qer_path
+      flash[:notice] = "Job application failed"
+    end
   end
+
+  def application_update
+    current_application_number = params[:application_number]
+    current_application_job_id = params[:application_job_id]
+    Application.find(current_application_number).update(approved: true)
+    Job.find(current_application_job_id).applications.where(approved: nil).each do |app|
+      app.update(approved: false)
+    end 
+    redirect_to jobs_path(current_user)
+    flash[:notice] = "Your job has been approved"
+  end 
 
   def qer 
     @jobs = Job.all

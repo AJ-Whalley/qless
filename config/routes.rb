@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :jobs do 
     member do 
       post 'apply'
+      post 'application_update'
     end
   end
   resources :profiles
