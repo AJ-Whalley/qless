@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     member do 
       post 'apply'
       post 'application_update'
+       # /job/:id/charge
+       post 'charge'
+
     end
   end
   resources :profiles
@@ -17,5 +20,3 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-

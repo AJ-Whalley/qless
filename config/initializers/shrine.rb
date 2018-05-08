@@ -1,10 +1,8 @@
-require "shrine"
-require "shrine/storage/file_system"
-
-Shrine.storages = {
-  cache: Shrine::Storage::FileSystem.new("public", prefix: "uploads/cache"), # temporary
-  store: Shrine::Storage::FileSystem.new("public", prefix: "uploads"),       # permanent
+Rails.configuration.stripe = {
+  publishable_key:  ENV.fetch('STRIPE_PUBLISHABLE_KEY'),
+  secret_key:       ENV.fetch('STRIPE_SECRET_KEY')
 }
 
-Shrine.plugin :activerecord
-Shrine.plugin :cached_attachment_data # for retaining the cached file across form redisplays
+Stripe.api_key = Rails.configuration.stripe[:secret_key]
+
+
