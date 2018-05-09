@@ -33,9 +33,7 @@ class JobsController < ApplicationController
       description: @job.title,
       currency: 'AUD'
     )
-    flash[:notice] = "Payment made!"
-
-    redirect_to pages_user_home_path
+    redirect_to pages_user_home_path, notice: "Payment made!"
   
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -52,11 +50,9 @@ class JobsController < ApplicationController
     @application_count = Application.count
     @job.applicants << current_user
     if Application.count != @application_count
-      flash[:notice] = "Job application successful!"
-      redirect_to jobs_qer_path
+      redirect_to jobs_qer_path, notice: "Job application successful!"
     else
-      redirect_to jobs_qer_path
-      flash[:notice] = "Job application failed"
+      redirect_to jobs_qer_path, notice: "Job application failed"
     end
   end
 
@@ -68,8 +64,7 @@ class JobsController < ApplicationController
     Job.find(current_application_job_id).applications.where(approved: nil).each do |app|
       app.update(approved: false)
     end 
-    redirect_to jobs_path(current_user)
-    flash[:notice] = "Your job has been approved"
+    redirect_to jobs_path(current_user), notice: "Your job has been approved"
   end 
 
   def qer 

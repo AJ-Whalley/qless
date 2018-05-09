@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   end
   resources :profiles
   root 'pages#index'
-  get 'pages/how_it_works'
-  get 'pages/support'
+  get '/how_it_works', to: 'pages#how_it_works'
+  get '/support', to: 'pages#support'
+  post '/support', to: 'pages#support_email'
   get 'pages/user_home'
+
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
