@@ -3,6 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// General settings for app 
+* {
+ margin: 0px;
+ padding: 0px;
+}
+
 .body {
- background-color: #009494; 
+ display: grid;
+ grid-template-columns: 1fr repeat(2, minmax(auto, 35em)) 1fr;
+ background: #009494;
+ line-height: 1.7em;
+ text-align: center;
+ margin: 0px;
+ padding: 0px;
+
+  .alert-success{
+    color: white;
+  }
+  .alert-danger{
+    color: red;
+  }
+
+  h1, h2, p {
+   color: #FFFFFF;
+  }
+
+  h1 { 
+   font-family: 'Special Elite', cursive; 
+  }
+
+  h2 { 
+   font-family: 'Exo', sans-serif; 
+  }
+  
+  p { 
+   font-family: 'Martel Sans', sans-serif; 
+  }
+
 }

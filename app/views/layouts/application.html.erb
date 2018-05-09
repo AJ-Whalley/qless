@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qless</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- h1, h2 & p Font Link -->
+    <link href="https://fonts.googleapis.com/css?family=Exo|Martel+Sans|Special+Elite" rel="stylesheet">
+
+
+
+
   </head>
 
   <body class="body">  
@@ -15,15 +21,19 @@
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-
-<style type="text/css">
-  .alert-success{
-    color: white;
-  }
-  .alert-danger{
-    color: red;
-  }
-</style>
     <%= yield %>
   </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
 </html>

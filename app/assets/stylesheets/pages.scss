@@ -1,3 +1,129 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Pages Index Styling
+// Side nav stylying
+.sidenav {
+ height: 100%;
+ width: 0;
+ position: fixed;
+ z-index: 1;
+ top: 0;
+ right: 0;
+ background-color: #009494;
+ overflow-x: hidden;
+ transition: 0.5s;
+ padding-top: 60px;
+ border-radius: 10px 0 0 10px;
+}
+
+.sidenav a {
+ background-color: #FF5729;
+ padding: 15px 8px 15px 32px;
+ text-decoration: none;
+ font-size: 15px;
+ color: #ffffff;
+ display: block;
+ transition: 0.3s;
+ border: 1px solid #ffffff;
+ border-radius: 10px 0 0 10px;
+}
+
+
+.sidenav a:hover {
+ color: #f1f1f1;
+ background-color: #009494;
+}
+
+.sidenav .closebtn {
+ position: absolute;
+ top: 0;
+ right: 25px;
+ font-size: 36px;
+ margin-left: 50px;
+ margin-top: 4px;
+ border: none;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+
+.sidenav .nav-heading {
+ padding-top: 40px;
+ padding-bottom: 40px;
+ font-size: 2.5em;
+ line-height: 1.7em
+}
+
+// Top menu nav styling
+
+.centre-two-columns {
+ grid-column: 2/4;
+}
+
+.top-nav {
+ display: grid;
+ grid-template-columns: repeat(12, 1fr);
+ grid-template-rows: 50px;
+ background-color: #FF5729;
+ align-items: center;
+ }
+.log-in-btn {
+ grid-column: 2/6; 
+ }
+ .sign-up-btn {
+  grid-column: 7/11;
+ }
+ .log-in-btn, .sign-up-btn {
+ background-color: #FFFFFF;
+ border-radius: 5px;
+ padding: 3px;
+ a { 
+  text-decoration: none;
+ }
+}
+
+.hamburger-menu {
+ grid-column: 11/13;
+ color: #FFFFFF;
+}
+
+// Headings & image styling 
+.title {
+ grid-column: 2/4;
+ padding-top: 40px;
+ 
+ h1 {
+  font-size: 6em;
+  line-height: 1.15em;
+ }
+ h2 {
+  font-size: 3em;
+  line-height: 1em;
+ }
+}
+
+.photo-wrap {
+ grid-column: 2/4;
+ padding-top: 100px;
+}
+
+img {
+ display: block;
+ width: 100%;
+ height: auto;
+}
+
+.photo-wrap {
+ color: white;
+}
+
+// Pages User Home Styling
+#map {
+  height: 400px;
+  width: 400px;
+}
+
