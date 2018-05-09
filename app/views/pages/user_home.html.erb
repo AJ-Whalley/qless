@@ -57,6 +57,7 @@
 <div>
     <%= @jobs.count %> <br>
     <% @jobs.each do |job| %> <br>
+    <% unless job.user == current_user %>
         <div>
         <%= image_tag job.user.profile.image_url(:job_card) %> <br>
         <%= job.user.profile.first_name %>
@@ -74,5 +75,6 @@
         </ul>
         <%= link_to 'See Job', job_path(job.id) %>
         </div>
+        <% end %>
     <% end %>
 </div>

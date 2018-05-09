@@ -7,17 +7,10 @@
     <%#= f.association :user %>
     <%= f.input :street_address, label: "Set Job Q-ing Street Address:" %>
     <%= f.input :city %>
-    <%#= f.input :latitude %>
-    <%#= f.input :longitude %>
     <%= f.input :title, label: "Job Q-ing Title:" %>
     <%= f.input :started_at %>
-    
-    <%#= f.input :completed_at %>
     <%= f.input :price %>
     <%= f.input :instructions %>
-    <%#= f.input :uuid %>
-    <%#= f.input :qrcode_data %>
-    <%#= f.input :stripe_charge_id %>
     <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id }%>
   </div>
 

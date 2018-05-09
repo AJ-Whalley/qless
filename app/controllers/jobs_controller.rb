@@ -4,7 +4,8 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index  
-    @jobs = Job.all  
+    @jobs = Job.all
+     
   end
 
   # GET /jobs/1
@@ -43,6 +44,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
+    authorize @job
   end
 
   # POST /jobs/1/apply
@@ -90,9 +92,10 @@ class JobsController < ApplicationController
   # PATCH/PUT /jobs/1
   # PATCH/PUT /jobs/1.json
   def update
+    
     respond_to do |format|
       if @job.update(job_params)
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
+        format.html { redirect_to jobs_path, notice: 'Job was successfully updated.' }
         format.json { render :show, status: :ok, location: @job }
       else
         format.html { render :edit }
@@ -110,6 +113,8 @@ class JobsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

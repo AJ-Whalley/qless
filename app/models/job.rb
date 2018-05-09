@@ -4,6 +4,8 @@ class Job < ApplicationRecord
   has_and_belongs_to_many :applicants, class_name: 'User', join_table: :applications
   has_many :applications
 
+  
+
   validates(
     :street_address,
     :city,
@@ -15,5 +17,9 @@ class Job < ApplicationRecord
 def full_address
   "#{street_address}, #{city}"
 end 
+
+def price_in_dollars
+  self.price.to_f * 100
+ end 
 
 end 

@@ -6,10 +6,13 @@
       </div>
     <% end %>
   </article>
+  
+  <%= hidden_field_tag 'amount', job.price %>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= job.title %>"
           data-amount="<%= job.price %>"
           data-locale="auto"></script>
+
 <% end %>
