@@ -12,7 +12,8 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= job.title %>"
-          data-amount="<%= job.price %>"
+          data-amount="<%= (job.price * 100) %>"
+          data-label= "Pay <%= job.user.profile.first_name %><%= job.user.profile.last_name %>"
           data-locale="auto"></script>
 
 <% end %>
