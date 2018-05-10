@@ -53,10 +53,10 @@
   position: absolute;
   top: 0;
   right: 0px;
-  font-size: 36px;
+  font-size: 50px;
   border: none;
-  height: 20px;
-  padding: 10px 20px 10px 10px;
+  padding-bottom: 7px;
+  padding-right: 20px;
  }
 
 // Top menu nav styling
@@ -89,7 +89,7 @@
 // Hamburger menu for idex page
 .hamburger-menu {
  grid-column: 11/13;
- color: #FFFFFF;
+ color: #FFFFFF; 
 }
 // Hamburger menu for all other pages
 .template-hamburger-menu {
