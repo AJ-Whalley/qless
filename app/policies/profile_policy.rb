@@ -18,6 +18,4 @@ class ProfilePolicy < ApplicationPolicy
     record == user.profile
   end 
 
-  
-
 end

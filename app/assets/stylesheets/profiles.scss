@@ -1,3 +1,33 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// New Profile Styling
+
+// profile-icon-wrap
+
+.profile-icon-wrap {
+ padding: 50px 0 25px 0;
+ h1 {
+  padding-top: 10px;
+ }
+}
+
+input[type="text"] {
+ background-color : #454445; 
+}
+
+.text textarea  {
+ background-color: #454445;
+}
+
+.country select  {
+ background-color: #454445;
+}
+
+#profile_country_code {
+ width: 365px;
+}
+.file {
+ display: none;
+}

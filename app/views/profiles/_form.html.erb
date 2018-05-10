@@ -3,21 +3,26 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :image, as: :hidden, input_html: { value: @profile.cached_image_data } %>
-    <%= f.input :image, as: :file, label: "Select your profile photo" %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :dob, as: :string, label: "Date of birth"%>
-    <%= f.input :bio %>
-    <%= f.input :street_address %>
-    <%= f.input :city %>
-    <%= f.input :postal_code %>
-    <%= f.input :state %>
-    <%= f.input :country_code, priority: ["AU", "NZ", "US", "GB"] %>
-    <%= f.input :identification %>
-    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id }%>
 
+  
+
+  <div class="form-inputs">
+    <label class="btn">
+    Add a picture!
+      <%= f.input :image, as: :hidden, input_html: { value: @profile.cached_image_data } %>
+      <%= f.input :image, as: :file, label: false;  %>
+    </label>
+      <%= f.input :first_name, label: false, placeholder: "First Name"%>
+      <%= f.input :last_name, label: false, placeholder: "Last Name" %>
+      <%= f.input :dob, as: :string, label: false, placeholder: "Date of Birth" %>
+      <%= f.input :bio, label: false, placeholder: "Short Bio" %>
+      <%= f.input :street_address,label: false, placeholder: "Address" %>
+      <%= f.input :city, label: false, placeholder: "City" %>
+      <%= f.input :postal_code, label: false, placeholder: "Post Code" %>
+      <%= f.input :state, label: false, placeholder: "State" %>
+      <%= f.input :country_code, priority: ["AU", "NZ", "US", "GB"], label: false, placeholder: "Select Your Country" %>
+      <%= f.input :identification, label: false, placeholder: "Drivers License Number" %>
+      <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id }%>
   </div>
 
   <div class="form-actions">

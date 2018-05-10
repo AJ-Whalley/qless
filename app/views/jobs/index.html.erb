@@ -49,11 +49,11 @@
 
 <% if job.applications.where(approved: true).exists?%>
   <% approved_application = job.applications.where(approved: true)[0] %>   
-    <%= image_tag approved_application.user.profile.image_url(:job_card)%><br>
+  <%= image_tag approved_application.user.profile.image_url(:job_card)%><br>
   <p><%= approved_application.user.profile.first_name %>
   <%= approved_application.user.profile.last_name %> has been approved for the job</p>
   <%= link_to 'See Profile', profile_path(approved_application.user) %> 
-    <%= render 'charge_form', job: job %> 
+  <%= render 'charge_form', job: job %> 
 <% else %>
 <p>
   <strong>Applicants:</strong><br>

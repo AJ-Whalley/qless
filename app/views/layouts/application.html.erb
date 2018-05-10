@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+    
     <title>Qless</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- h1, h2 & p Font Link -->
     <link href="https://fonts.googleapis.com/css?family=Exo|Martel+Sans|Special+Elite" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
 
 
@@ -21,7 +23,10 @@
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+  <div class="page-center-columns">
     <%= yield %>
+
+   </div> 
   </body>
 </html>
 

@@ -12,11 +12,19 @@
 .body {
  display: grid;
  grid-template-columns: 1fr repeat(2, minmax(auto, 35em)) 1fr;
+ grid-template-rows: minmax(50px, auto);
  background: #009494;
  line-height: 1.7em;
  text-align: center;
  margin: 0px;
  padding: 0px;
+
+  .alert {
+    grid-column: 2/4;
+    grid-row: 2/3;
+    padding: 10px 0 0 10px;
+    font-size: 1em;
+  }
 
   .alert-success{
     color: white;
@@ -41,4 +49,67 @@
    font-family: 'Martel Sans', sans-serif; 
   }
 
+}
+
+// User sign in page 
+.page-center-columns {
+  grid-column: 2/4;
+}
+
+.icon-wrap {
+  padding: 150px 0 25px 0;
+}
+
+#svg-style {
+  color: #FFFFFF;
+  width: 70px;
+  height: 70px;
+}
+// Form fields styling 
+.optional, .required, .checkbox, .btn {
+  font-family: 'Special Elite', cursive; 
+  padding: 10px;
+  font-size: 1.25em;
+  border-radius: 10px;
+  color: #FFFFFF;
+  outline-color: #FFFFFF;
+  outline-width: 10px;
+}
+
+input[type="email"], input[type="password"], input[type="submit"] {
+  background-color : #454445;
+}
+
+input[type="checkbox"] {
+  padding-right: 15px;
+}
+
+.checkbox {
+  font-size: 1em;
+  margin-right: 200px;
+  font-family: 'Martel Sans', sans-serif; 
+}
+
+.btn {
+  width: 180px;
+  height: 49px;
+  radding: 20px;
+}
+
+.links {
+  text-decoration: none;
+  display: inline-block;
+  font-size: .5em;
+  padding-top: 10px;
+}
+
+.links h1 {
+  font-family: 'Martel Sans', sans-serif; 
+}
+
+// sign Up for hint
+.hint {
+  display: block;
+  font-size: .75em;
+  font-family: 'Martel Sans', sans-serif;
 }
