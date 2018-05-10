@@ -1,7 +1,12 @@
-<h1>Editing Profile</h1>
 
-<%= render 'form', profile: @profile %>
+<div>
+ <%= render 'layouts/hamburger_menu' %>
+
+ <h1 class="title-three">Edit Your Profile</h1>
+
+ <%= render 'form', profile: @profile %>
 
  <span class="bottom-btn-two">
   <%= link_to 'Back', @profile %>
  </span>
+</div>
