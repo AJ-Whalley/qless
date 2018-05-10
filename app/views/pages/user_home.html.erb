@@ -3,14 +3,14 @@
 
 
 <%# 2 Log in log out buttons %>
-
- <div class="top-nav">
+<div class="top-nav">
   <div class="log-in-btn"><%= link_to 'Book A Qer', jobs_path(current_user) %></div>
   <div class="sign-up-btn"><%= link_to 'Be A Qer', jobs_qer_path %></div>
   <%# Menu icon %>
   <div class="hamburger-menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
 
 </div>
+
 <%# Menu overlay %>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -22,83 +22,74 @@
   <h1><%= link_to 'How It Works', how_it_works_path %></h1>
   <h1><%= link_to 'Support', support_path %></h1>
   <h1><%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %></h1>
-  
 </div>
 
 <script>
 function openNav() {
-    document.getElementById("mySidenav").style.width = "300px";
+  document.getElementById("mySidenav").style.width = "300px";
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mySidenav").style.width = "0";
 }
 </script>
 
+<%# Map with job markers %>
+<div id="map">
+  <%= javascript_tag do %>
+    function initMap() {
+      const locations = <%= raw @locations.to_json %>
+      locations.forEach((local) => {
+        local.lng = parseFloat(local.lng)
+        local.lat = parseFloat(local.lat)
+        })
 
-<h1>Welcome home <%= current_user.profile.first_name %></h1>
-
-<h2>A map with current available jobs goes here</h2>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= current_user.profile.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= current_user.profile.longitude %>
-</p>
-    <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-    <%= javascript_tag do %>
-      function initMap() {
-        const locations = <%= raw @locations.to_json %>
-        locations.forEach((local) => {
-          local.lng = parseFloat(local.lng)
-          local.lat = parseFloat(local.lat)
-          })
-
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -37.8182119, lng:144.9543325},
-          zoom: 15,
-        });
-    // markers for each location
-    locations.map((location, i) => {
-      return new google.maps.Marker({
-        position: location,
-        label: location.name,
-        map: map
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -37.8182119, lng:144.9543325},
+        zoom: 13,
       });
-      });
-    }
-    <% end %>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["MAP_KEY"] %>&callback=initMap">
-    </script>
+  // markers for each location
+  locations.map((location, i) => {
+    return new google.maps.Marker({
+      position: location,
+      label: location.name,
+      map: map
+    });
+    });
+  }
+  <% end %>
 
-<br><br><br><br>
-<div>
-    <%= @jobs.count %> <br>
-    <% @jobs.each do |job| %> <br>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["MAP_KEY"] %>&callback=initMap">
+</script>
+</div>
+
+<%# Current available job cards %>
+
+  <% @jobs.each do |job| %>
     <% unless job.user == current_user %>
-        <div>
-        <%= image_tag job.user.profile.image_url(:job_card) %> <br>
+    <div class="job-grid">
+      <div class="image-wrap">
+        <%= image_tag job.user.profile.image_url(:job_card) %> 
+        <p>
         <%= job.user.profile.first_name %>
         <%= job.user.profile.last_name %>
-        </div><br>
-
-        <div>
-        <%= job.title %> <br>
-        <ul>
-            <li><%= job.street_address %></li>
+        </p>
+      </div>
+      
+      <div class="job-details">
+        <span class="job-card-title"><%= job.title %></span>
+          <ul>
             <li><%= job.city %></li>
-            <li><%= job.started_at %></li>
             <li>$<%= job.price %></li>
-            <li><%= job.instructions %></li>
-        </ul>
+          </ul>
+      </div>  
+
+      <div class="job-link">  
         <%= link_to 'See Job', job_path(job.id) %>
-        </div>
-        <% end %>
+      </div>
+    </div>
     <% end %>
-</div>
+  <% end %>
+
+

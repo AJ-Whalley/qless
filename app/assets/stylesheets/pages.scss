@@ -62,14 +62,11 @@
 
 // Top menu nav styling
 
-.centre-two-columns {
- grid-column: 2/4;
-}
-
 .top-nav {
  display: grid;
  grid-template-columns: repeat(12, 1fr);
  grid-template-rows: 50px;
+ grid-rown: 1/2;
  background-color: #FF5729;
  align-items: center;
  }
@@ -87,11 +84,16 @@
   text-decoration: none;
  }
 }
-
+// Hamburger menu for idex page
 .hamburger-menu {
  grid-column: 11/13;
  color: #FFFFFF;
 }
+// Hamburger menu for all other pages
+.template-hamburger-menu {
+  grid-column: 11/13;
+  color: #FF5729;
+ }
 
 // Headings & image styling 
 .title {
@@ -111,12 +113,12 @@
 .photo-wrap {
  grid-column: 2/4;
  padding-top: 100px;
-}
 
 img {
  display: block;
  width: 100%;
  height: auto;
+  }
 }
 
 .photo-wrap {
@@ -127,16 +129,60 @@ img {
 //
 // User Home Styling 
 //
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: minmax(50px, auto);
+  border: 2px solid #ffffff;
+  margin: 10px;
+  font-family: 'Martel Sans', sans-serif; 
+  color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #454445;
+  align-items: center;
+}
+
+.image-wrap {
+  grid-column: 1/5;
+  padding-top: 25px;
+  // border-right: 1px solid #ffffff; 
+  height: 100%;
+img {
+  width: 85px;
+  height: 85px;
+  display: inline-block;
+  border-radius: 50%;
+  }
+}
+
+.job-details {
+  grid-column: 5/11;
+  padding-top: 10px;
+  line-height: 1.5em;
+  border-right: 1px solid #ffffff; 
+  border-left: 1px solid #ffffff;
+  .job-card-title {
+    font-size: 1.2em;
+    font-family: 'Exo', sans-serif; 
+  }
+  li {
+    list-style-type: none;
+  }
+}
 
 
-
-
-
-
-
+.job-link {
+  grid-column: 11/13;
+  font-size: 22px;
+  a {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+}
 
 
 #map {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 600px;
 }

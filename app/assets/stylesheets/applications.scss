@@ -7,6 +7,7 @@
 * {
  margin: 0px;
  padding: 0px;
+ box-sizing: border-box;
 }
 
 .body {
@@ -19,19 +20,23 @@
  margin: 0px;
  padding: 0px;
 
-  .alert {
-    grid-column: 2/4;
-    grid-row: 2/3;
-    padding: 10px 0 0 10px;
-    font-size: 1em;
-  }
 
-  .alert-success{
-    color: white;
-  }
-  .alert-danger{
-    color: red;
-  }
+ .alert {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  padding: 10px 0 0 10px;
+  font-size: 1em;
+}
+
+.alert-success{
+  color: white;
+}
+.alert-danger{
+  color: red;
+}
+ .center-page-two-columns {
+  grid-column: 2/4;
+ }
 
   h1, h2, p {
    color: #FFFFFF;
@@ -52,9 +57,6 @@
 }
 
 // User sign in page 
-.page-center-columns {
-  grid-column: 2/4;
-}
 
 .icon-wrap {
   padding: 150px 0 25px 0;
