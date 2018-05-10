@@ -5,12 +5,12 @@
 
   <div class="form-inputs">
     <%#= f.association :user %>
-    <%= f.input :street_address, label: "Set Job Q-ing Street Address:" %>
-    <%= f.input :city %>
-    <%= f.input :title, label: "Job Q-ing Title:" %>
-    <%= f.input :started_at %>
-    <%= f.input :price %>
-    <%= f.input :instructions %>
+    <%= f.input :street_address, label: false, placeholder: "Send Qer To An Address:" %>
+    <%= f.input :city, label: false, placeholder: "City" %>
+    <%= f.input :title, label: false, placeholder: "Job Q-ing Title" %>
+    <%= f.input :started_at, label: "Start Time"%>
+    <%= f.input :price, label: false, placeholder: "$ Price"%>
+    <%= f.input :instructions, label: false, placeholder: "When you want them their and any special instructions"  %>
     <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id }%>
   </div>
 

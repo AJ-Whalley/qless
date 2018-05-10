@@ -1,80 +1,91 @@
-<h1>Your Current Time Savers</h1>
+<div>
+  <%= render 'layouts/hamburger_menu' %>
+<h1 class="title-three">Your Current Time Savers</h1>
 <div class="jobs">
+
   <% @jobs.each do |job| %>
-
-<% if job.user_id == current_user.id %>
-  <p>
-    <strong>User Id:</strong>
-    <%= job.user_id %>
-  </p>
-  <p>
-    <strong>Street address:</strong>
-    <%= job.street_address %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= job.city %>
-  </p>
-
-  <p>
-    <strong>Job Q-ing Title:</strong>
-    <%= job.title %>
-  </p>
-
-  <p>
-    <strong>Started at:</strong>
-    <%= job.started_at %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    $<%= job.price %>
-  </p>
-
-  <p>
-    <strong>Instructions:</strong>
-    <%= job.instructions %>
-  </p>
-
-  <p>
-  <strong>Latitude:</strong>
-  <%= job.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= job.longitude %>
-</p>
+    <% if job.user_id == current_user.id %>
+    <div class="job-grid">
+      <div class="image-wrap">
+        <%= image_tag job.user.profile.image_url(:job_card) %> 
+        <p>
+        <%= job.user.profile.first_name %>
+        <%= job.user.profile.last_name %>
+        </p>
+      </div>
+      
+      <div class="job-details">
+        <span class="job-card-title"><%= job.title %></span>
+          <ul>
+            <li><%= job.city %></li>
+            <li>$<%= job.price %></li>
+          </ul>
+      </div> 
+      
 
 <% if job.applications.where(approved: true).exists?%>
-  <% approved_application = job.applications.where(approved: true)[0] %>   
-  <%= image_tag approved_application.user.profile.image_url(:job_card)%><br>
-  <p><%= approved_application.user.profile.first_name %>
-  <%= approved_application.user.profile.last_name %> has been approved for the job</p>
-  <%= link_to 'See Profile', profile_path(approved_application.user) %> 
-  <%= render 'charge_form', job: job %> 
+  <% approved_application = job.applications.where(approved: true)[0] %>
+  </div>
+  <div class="applicant-job-grid"> 
+    <div class="approved-image-wrap">   
+      <%= image_tag approved_application.user.profile.image_url(:job_card)%>
+    </div>
+    <div class="approved-name">
+    <%= approved_application.user.profile.first_name %>
+    <%= approved_application.user.profile.last_name %> has been approved for the job
+    </div>
+     
+    <div class="approved-job-details"> 
+    <%# <div class="applicant-job-details"> %>
+      <%= link_to 'See Profile', profile_path(approved_application.user) %> 
+    <%# </div>  %>
+      <%= render 'charge_form', job: job %> 
+    </div>  
+  </div>
 <% else %>
+<div class="job-link">  
+<%= link_to 'Edit', edit_job_path(job) %>
+</div>
+</div>
 <p>
   <strong>Applicants:</strong><br>
   <% job.applications.each do |application| %>
-  <%= image_tag application.user.profile.image_url(:job_card)%><br>
-  <%= application.user.profile.first_name %>
-  <%= application.user.profile.last_name %>
-  <%= link_to 'See Profile', profile_path(application.user) %>
-  <%= button_to 'Confirm', application_update_job_path(application.job_id), method: :post, params: {application_number: application, application_job_id: application.job_id } %>
+  <div class="applicant-job-grid"> 
+    <div class="applicant-image-wrap">
+      <%= image_tag application.user.profile.image_url(:job_card)%>
+    </div>
+      <div class="applicant-name">
+        <%= application.user.profile.first_name %>
+        <%= application.user.profile.last_name %>
+      </div>
+    
+
+    <div class="applicant-job-details">
+      <%= link_to 'See Profile', profile_path(application.user) %>
+    </div>  
+    <div class="applicant-job-link">
+      <%= button_to 'Confirm', application_update_job_path(application.job_id), method: :post, params: {application_number: application, application_job_id: application.job_id } %>
+    </div>
+  </div> 
   <% end %>
   <% end %>
-</p>
-  <%= link_to 'Edit', edit_job_path(job) %>
+  
 <% end %>
 <% end %>
 </div>
 
- |
-<%= link_to 'Back', pages_user_home_path %> | 
-<%= link_to 'Create New Job', new_job_path %>
+  <span class="bottom-btn-three">
+    <%= link_to 'Back', pages_user_home_path %>
+  </span>
+
+  <span class="bottom-btn-four">
+    <%= link_to 'Create New Job', new_job_path %>
+  </span>
 
 
+
+
+
+</div>
 <%# = button_to "smth", some_path, method: :get, params: { start_point: 3.month.ago }
 the key is to use params key, then in controller you will be able to get value via @some_var = params[:start_point] %>

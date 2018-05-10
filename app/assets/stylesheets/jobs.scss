@@ -1,3 +1,242 @@
 // Place all the styles related to the Jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//
+// Jobs Show Page Stying 
+//
+.template-hamburger-menu {
+ text-align: right;
+ padding: 15px 15px 0 0;
+ font-size: 50px;
+}
+
+.job-profile {
+ img {
+ height: 200px;
+ border-radius: 40%;
+ }
+}
+.text-fields h3 {
+ text-align: left;
+ padding: 20px 0 0 30px;
+ font-size: 1.4em;
+}
+
+.job-field {
+ width: 365px;
+ text-align: left; 
+ border: 1.25px solid white;
+ border-radius: 10px;
+ background-color: #454445;
+ display: inline-block;
+ padding: 10px 0 5px 15px;
+ font-size: 1.2em;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bottom-btns {
+ display: grid;
+ grid-template-columns: repeat(12, 1fr);
+ input {
+  grid-column: 9/12;
+  width: 182px;
+  display: block;
+  border: 1.25px solid white;
+  border-radius: 10px;
+  padding: 10px 0 10px 15px;
+  margin: 15px 0 0 120px;
+  height: 44.5px;
+  font-family: 'Martel Sans', sans-serif;
+  font-size: 1.2em;
+  color: #ffffff;
+ }
+}
+.back-btn {
+ grid-column: 2/6;
+ width: 118px;
+ border: 1.25px solid white;
+ border-radius: 10px;
+ display: inline-block;
+ padding: 10px 0 5px 15px;
+ margin: 15px 0 15px 35px;
+ font-family: 'Martel Sans', sans-serif;
+ font-size: 1.2em;
+ color: #ffffff;
+ background-color: #454445;
+ a {
+  text-decoration: none;
+ }
+ 
+}
+
+
+
+//
+// New Job Styling
+//
+.title-two {
+ font-size: 4em;
+ padding: 0 0 40px 0;
+}
+
+.decimal {
+ background-color: #454445;
+}
+
+.job_price{
+ background-color: #009494;
+}
+
+.copy {
+ padding: 0 10px 10px 10px;
+ text-align: right;
+ font-size: 1.1em;
+}
+
+#job_instructions {
+ height: 100px;
+}
+
+#job_started_at_1i {
+ display: none;
+}
+
+.datetime {
+ background-color: #454445;
+ margin: 10px 23px 0 23px;
+ 
+}
+
+//
+// Current Time Savers Styling
+//
+
+.title-three {
+ font-size: 4em;
+ padding: 0 0 40px 15px;
+ line-height: 1em;
+ text-align: left;
+}
+
+.applicant-job-grid {
+ display: grid;
+ grid-template-columns: repeat(12, 1fr);
+ grid-template-rows: minmax(50px, auto);
+ border: 2px solid #ffffff;
+ margin: 10px;
+ font-family: 'Martel Sans', sans-serif; 
+ color: #FFFFFF;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ background-color: #454445;
+ align-items: center;
+}
+
+.applicant-image-wrap {
+ grid-column: 1/4;
+ padding-top: 10px;
+ height: 100%;
+img {
+ width: 65px;
+ height: 65px;
+ display: inline;
+ border-radius: 50%;
+ }
+}
+
+.applicant-name {
+ grid-column: 4/7;
+}
+
+.applicant-job-details {
+ grid-column: 7/11;
+ height: 65px;
+ padding: 21px 5px 0 5px;
+ line-height: 1.5em;
+ border-right: 1px solid #ffffff; 
+ border-left: 1px solid #ffffff;
+ a {
+  text-decoration: none;
+ }
+}
+input[type="submit"] {
+ grid-column: 11/13;
+ font-size: 18px;
+ text-decoration: none;
+ color: #FFFFFF;
+ border: none;
+ // height: 100%;
+ padding-left: 10px;
+ 
+ // padding-left: 20px;
+}
+
+// Approved Qer
+.approved-job-grid {
+ display: grid;
+ grid-template-columns: repeat(12, 1fr);
+ grid-template-rows: minmax(50px, auto);
+ border: 2px solid #ffffff;
+ margin: 10px;
+ font-family: 'Martel Sans', sans-serif; 
+ color: #FFFFFF;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ background-color: #454445;
+ align-items: center;
+}
+
+.approved-image-wrap {
+ grid-column: 1/4;
+ padding-top: 10px;
+ height: 100%;
+img {
+ width: 65px;
+ height: 65px;
+ display: inline;
+ border-radius: 50%;
+ }
+}
+
+.approved-name {
+ grid-column: 4/9;
+ padding-right: 5px;
+}
+
+.approved-job-details {
+ grid-column: 9/13;
+ height: 65px;
+ padding: 7px 5px 0 5px;
+ line-height: 1.5em;
+ border-right: 1px solid #ffffff; 
+ border-left: 1px solid #ffffff;
+ a {
+  text-decoration: none;
+ }
+ span {
+  width: 81.65px;
+ }
+}
+
+.bottom-btn-three, .bottom-btn-four {
+ width: 140px;
+ border: 1.25px solid white;
+ border-radius: 10px;
+ display: inline-block;
+ padding: 10px 0 5px 15px;
+ margin: 15px 0 15px 5px;
+ font-family: 'Martel Sans', sans-serif;
+ font-size: 1.2em;
+ color: #ffffff;
+ background-color: #454445;
+ a {
+  text-decoration: none;
+ }
+}
+
+.bottom-btn-four {
+ width: 190px;
+}
+

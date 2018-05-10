@@ -43,8 +43,7 @@
 .sidenav {padding-top: 15px;}
 .sidenav a {font-size: 18px;}
 }
-
-.sidenav .nav-heading {
+.nav-heading {
  padding-top: 40px;
  padding-bottom: 40px;
  font-size: 2.5em;
@@ -83,6 +82,9 @@
  a { 
   text-decoration: none;
  }
+ a:visited {
+  color: black;
+}
 }
 // Hamburger menu for idex page
 .hamburger-menu {
@@ -158,7 +160,7 @@ img {
 
 .job-details {
   grid-column: 5/11;
-  padding-top: 10px;
+  padding: 10px 5px 0 5px;
   line-height: 1.5em;
   border-right: 1px solid #ffffff; 
   border-left: 1px solid #ffffff;

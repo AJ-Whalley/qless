@@ -11,11 +11,11 @@ class ImageUploader < Shrine
     pipeline = ImageProcessing::MiniMagick.source(original)
 
     size_65 = pipeline.resize_to_limit!(65, 65)
-    size_80 = pipeline.resize_to_limit!(80, 80)
+    size_150 = pipeline.resize_to_limit!(150, 150)
     size_300 = pipeline.resize_to_limit!(300, 300)
 
     original.close!
 
-    { original: io, small: size_300, profile: size_80, job_card: size_65 }
+    { original: io, small: size_300, profile: size_150, job_card: size_65 }
   end
 end

@@ -1,68 +1,76 @@
-<p>
-  <%= image_tag @profile.image_url(:small) %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @profile.first_name %> 
-  <%= @profile.last_name %>
-</p>
-
-<p>
-  <strong>Date of Birth:</strong>
-  <%= @profile.dob %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
-
-<p>
-  <strong>Street address:</strong>
-  <%= @profile.street_address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @profile.city %>
-</p>
-
-<p>
-  <strong>Postal code:</strong>
-  <%= @profile.postal_code %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @profile.state %>
-</p>
-
-<p>
-  <strong>Country code:</strong>
-  <%= @profile.country_code %>
-</p>
-
-<p>
-  <strong>Identification:</strong>
-  <%= @profile.identification %>
-</p>
-
-<p>
-  <strong>User Id:</strong>
-  <%= @profile.id %>
-</p>
-
-<p>
-  <strong>Jobs Applied For:</strong>
-  <% @profile.user.job_applications.each do |a| %>
-  <%= a[:title] %>
-  <% end %>
-</p>
+<div class="job">
+<%= render 'layouts/hamburger_menu' %>
+  
+  <div class="job-profile">
+    <%= image_tag @profile.image_url(:small) %>
+  </div>
 
 
+  <div class="text-fields">
+  <div>
+    <h3>Name:</h3>
+    <p>
+      <%= @profile.first_name %>
+      <%= @profile.last_name %>
+    </p>
+  </div>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', :back %>
+  <div>
+    <h3>Date of Birth:</h3>
+    <p><%= @profile.dob %></p>
+  </div>
 
+  <div>
+    <h3>Bio:</h3>
+    <p><%= @profile.bio %></p>
+  </div>
 
+  <div>
+    <h3>Address:</h3>
+    <p><%= @profile.street_address %></p>
+  </div>
+
+  <div>
+    <h3>City:</h3>
+    <p><%= @profile.city %></p>
+  </div>
+
+  <div>
+    <h3>Post Code:</h3>
+    <p><%= @profile.postal_code %></p>
+  </div>
+
+  <div>
+    <h3>State:</h3>
+    <p><%= @profile.state %></p>
+  </div>
+
+  <div>
+    <h3>Country Code:</h3>
+    <p><%= @profile.country_code %></p>
+  </div>
+
+  <div>
+    <h3>Drivers License Number:</h3>
+    <p><%= @profile.identification %></p>
+  </div>
+
+  <div>
+    <h3>Jobs Applied For:</h3>
+    <p>
+      <% @profile.user.job_applications.each do |a| %>
+      <%= a[:title] %>,
+      <% end %>
+    </p>
+  </div>
+
+  <span class="bottom-btn-one">
+    <%= link_to 'Edit', edit_profile_path(@profile) %>
+  </span>
+  
+  <span class="bottom-btn-two">
+    <%= link_to 'Back', pages_user_home_path %>
+  </span>
+
+  </div>
+</div>

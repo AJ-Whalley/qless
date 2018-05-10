@@ -31,3 +31,34 @@ input[type="text"] {
 .file {
  display: none;
 }
+
+
+// Profile Show Page
+
+.text-fields p {
+ width: 365px;
+ text-align: left; 
+ border: 1.25px solid white;
+ border-radius: 10px;
+ background-color: #454445;
+ display: inline-block;
+ padding: 10px 0 5px 15px;
+ font-size: 1.2em;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bottom-btn-one, .bottom-btn-two {
+ width: 150px;
+ border: 1.25px solid white;
+ border-radius: 10px;
+ display: inline-block;
+ padding: 10px 0 5px 15px;
+ margin: 15px 0 15px 5px;
+ font-family: 'Martel Sans', sans-serif;
+ font-size: 1.2em;
+ color: #ffffff;
+ background-color: #454445;
+ a {
+  text-decoration: none;
+ }
+}

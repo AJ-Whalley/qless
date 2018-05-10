@@ -1,5 +1,14 @@
-<h1>New Job</h1>
+<div class="new-page">
 
-<%= render 'form', job: @job %>
+ <%= render 'layouts/hamburger_menu' %>
+ <h1 class="title-two">QLess</h1>
+ 
+ <p class="copy">Simply fill out the questions below and book a liner to save the most precious thing on earth... Your Time! </p>
+ <h2>Save Your Time</h2>
 
-<%= link_to 'Back', :back %>
+ <%= render 'form', job: @job %>
+
+  <span class="bottom-btn-three">
+    <%= link_to 'Back', :back %>
+  </span>
+</div>

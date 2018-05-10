@@ -67,7 +67,7 @@ src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["MAP_KEY"] %>&callback=
 <%# Current available job cards %>
 
   <% @jobs.each do |job| %>
-    <% unless job.user == current_user %>
+    <% unless job.user == current_user || Application.find_by(job_id: job.id).approved == true %>
     <div class="job-grid">
       <div class="image-wrap">
         <%= image_tag job.user.profile.image_url(:job_card) %> 
