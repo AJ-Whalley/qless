@@ -1,196 +1,96 @@
 # README
 
-
 # QLess
 ## - Live More - Queue Less
 
-[Link to the app website](#) | 
-[Link to the GitHub repository](#)
+[Link to the app website](https://shielded-springs-50332.herokuapp.com/) | 
+[Link to the GitHub repository](https://github.com/CodeDependence/qless)
 
 
-### 1. [CS - Customer Segments](#) 
-  - Description of the problem (that your website solved)
-  - Link to User stories (i.e. Trello), and screenshots
-  - Link to [Moonboard via Pinterest](https://www.pinterest.com.au/ajwhalley45/iddl-q-less-board/). Explain why these coulors corelate with the users 
+## Problem
 
-### 2. [VP - Value Propositions](#) 
-  - App Features
-    - Proposed solution for the problem (including ethical considerations)
-    - Link to Wireframes / Flowchart / Figma Mockups, and screenshots of your wireframes
+- It's 2018 and the average person is busier than they ever have been. Never in hisorty have we had access to the vast amount of resources and experiences than today. It's an incredible information era that has magnified one assest above all others.... Time! 
+One of the biggest time wastes or all is the very problem I'm hear to solve. Waiting in line. Whether it be for a donut, to get your drivers lincese changed or to the football stadium, waiting in line sucks and we all know it. 
+- Altogether, some people spend a year or two of their lives waiting in line, estimates Richard Larson, a professor who studies queuing theory at MIT. This back-of-the envelope calculation includes less obvious types of queues, like driving in slower-than-normal traffic during a daily commute.
+- This is the reason why I choose to build QLess
 
-### 3. [CH - Channels](#) 
+## Solution
+- The purpose of my 2 sided rails application is to give people the opportunity for others to wait iin line for them at a price of their choosing. 
+- On the flip side, the pay off to to simply wait in line on social media or a phone call and get paid. Pretty good deal if you ask me. 
 
-### 4. [CR - Customer Relationships](#) 
 
-### 5. [R$ - Revenue Streams](#) 
 
-### 6. [KR - Key Resources](#) 
+## Planning
+- Initializing the app was done by creating and continually referenceing user stories and taking into consideration the flow of the site and the needs of the user
+- From there all planning and project managment was done through Figma, Trello and DB Designer
 
-### 7. [KA - Key Activities](#) 
+- You can view my Figma designs [here.](https://www.figma.com/file/C96cMLTusDJG3EVvCj4RYqxG/IDDl---QLESS)
 
-### 8. [KP - Key Partnerships](#) 
-- API Reference
+### User Stories 
+![Photo of user storeis](app/assets/images/for_README/user-stories.png)
+![Photo of user storeis](app/assets/images/for_README/user-stories-2.png)
 
-  - Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+[Here](https://trello.com/b/XjgtW7yM/iddl-app)
 
-- Deployment
+![Photo of pinterest](app/assets/images/for_README/pinterest.png)
 
-  - Add additional notes about how to deploy this on a live system
+- Link to [Moonboard via Pinterest](https://www.pinterest.com.au/ajwhalley45/iddl-q-less-board/). Explain why these coulors corelate with the users 
 
-- Built With
+- You can see the DB design here
 
-  * Dropwizard - Bla bla bla
-  * Maven - Maybe
-  * Atom - ergaerga
+- The messages and conversations tables were never used but I had planned for the future
 
-### 9. [C$ - Cost Structure](#) 
+![Photo of erd](app/assets/images/for_README/erd.png)
 
-### 10. [TB - The Build](#)
-  - Design 
-    - Link to your ERD (entity relationship diagram) and screenshots of the ERD
-    - Database Tables / Models
-    - Design decisions (fonts, colours etc with a brief explanation) and images if necessary
+- Throughout the entire project I used Trello to manage where I was and what was next.
+
+- ![Photo of erd](app/assets/images/for_README/trello.png)
+
+- ![Photo of erd](app/assets/images/for_README/trello-2.png)
+
+## Design
+  - All things design was done with Figma
+  - I also used it to visually see what I needed to do
+![Photo of erd](app/assets/images/for_README/1.png)
+![Photo of erd](app/assets/images/for_README/2.png)
+![Photo of erd](app/assets/images/for_README/3.png)
+![Photo of erd](app/assets/images/for_README/4.png)
+![Photo of erd](app/assets/images/for_README/5.png)
+![Photo of erd](app/assets/images/for_README/6.png)
+
   - Programming 
-    - Loved & Learnt 
-    - Gotchas
+    - I loved doing thris project and I learnt alot! 
+    - One of the most challenges parts was having the jobs available to show interest and then confirmed by the job creater 
+
   - Future Development
-     - Future development / project improvements
+     - For future development there is plenty of features and things to build apon
+     - The first part will be a message ystem between the job creator and the user who has been confirmed for the job. 
 
 
 ### Gems 
  - Rspec-rails 
- - 
+ - gem 'devise'
+- gem 'geocoder'
+- gem "pundit"
+- gem 'mailgun_rails'
+- gem "shrine", "~> 2.0"
+- gem 'image_processing', '~> 1.2'
+- gem 'stripe', '~> 3.13'
+- gem 'simple_form'
+- gem 'rubocop', '~> 0.55.0', require: false
+- gem 'country_select', '~> 3.1', '>= 3.1.1'
 
 
-# Posibilities inspired from other README's 
-```
-my-app/
-├── .gitignore
-├── README.md
-├── elm-package.json
-├── elm-stuff
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo.svg
-│   └── manifest.json
-├── src
-│   ├── Main.elm
-│   ├── index.js
-│   ├── main.css
-│   └── registerServiceWorker.js
-└── tests
-    ├── Tests.elm
-    └── elm-package.json
-```
 
-## Philosophy
 
-Inspired by [create-react-app](https://github.com/facebookincubator/create-react-app)
 
-* **One Dependency:** There is just one build dependency. It uses  Elm Platform, Webpack, and other amazing projects, but provides a cohesive curated experience on top of them.
 
-* **Zero Configuration:** There are no configuration files or command line options. Configuring both development and production builds is handled for you so you can focus on writing code.
 
-* **No Lock-In:** You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
 
 
 
-## Authors
 
-* **John Doe** - *Initial work* - [JohnDoe](https://github.com/JohnDoe)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
 
-# Model Example
-- Database tables / Models
-- User
-- first_name
-- last_name
-- email (indexed automatically by devise)
-- Portfolio
-- bio: text
-- user_id: User (index this)
-- avatar_data: text (shrine image)
-- city: string
-- country: string
-
-
-
-
-# RESEARCH 
-
-
-https://www.washingtonpost.com/news/wonk/wp/2015/11/27/what-you-hate-about-waiting-in-line-isnt-the-wait-at-all/?utm_term=.bd5df971dc15
-
-In those early days, engineers were focused solely on efficiency — how to serve as many customers as possible without cutting into a company's profits. It wasn't until 50 years later that researchers began to realize that there were subtler factors influencing people's experience of waiting in line, including ideas of fairness, mismanaged expectations, and the strange and inaccurate way that most people perceive both time and pain.
-
-Altogether, some people spend a year or two of their lives waiting in line, estimates Richard Larson, a professor who studies queuing theory at MIT. This back-of-the envelope calculation includes less obvious types of queues, like driving in slower-than-normal traffic during a daily commute.*
-
-
-And the way that businesses manage lines results in easily billions of dollars of gained and lost brand equity and consumer spending. A long and unpleasant wait can damage a customer's view of a brand, cause people to leave a line or not enter it in the first place (what researchers respectively call "reneging" and "balking"), or discourage them from coming back to the store entirely.
-
-Even so, businesses can still do a lot to improve customer experiences. As numerous studies show, how people feel when they wait in line often matters a lot more than the duration of the wait.
-
-Mirrors by the elevator, TV screens at the airport, magazines in the waiting room, little knick-knacks to peruse and buy in the supermarket checkout aisle and, of course, smartphones, all take people's minds off of their frustration about being imprisoned in a line.
-
-That guarantee of fairness eliminates a lot of stress and anxiety.
-
-There's the stress of choosing the shortest line, and then there's the possibility that, for unforeseen reasons, your line will grind to a halt. You can analyze the contents of people's carts all you want, but the person in front of you may still pull out an envelope stuffed with coupons or a giant bag of pennies.
-
-The study concludes that the duration of the experience doesn't matter that much to people — what matters is the discomfort at the worst and final moments.
-
-
-
-https://www.lifehacker.com.au/2012/08/why-you-hate-waiting-in-line/
-
-Oddly, our feelings about queuing in a line aren't just based on expectations; our perception of a line is often all about that final moment. If a line speeds up at the end, we remember the experience positively. If it slows down, we have a negative memory.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
